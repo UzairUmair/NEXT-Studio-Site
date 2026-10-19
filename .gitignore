@@ -2,14 +2,8 @@ node_modules/
 .next/
 .env*
 !.env.example
-assets/source-graphics/
-assets/working/
 *.log
-
 tsconfig.tsbuildinfo
-assets/audit/screenshots/
-assets/audit/before-after/
-assets/audit/contact-sheet.jpg
-design-references/
 playwright-report/
 test-results/
+artifacts/
