@@ -1,0 +1,2 @@
+import {ClayButton} from '@/components/ui';
+export default function NotFound(){return <div className="container page-hero"><span className="eyebrow">404 / OFF THE MAP</span><h1>Nothing here.<br/>Yet.</h1><p>This page could not be found. Find your way back to the studio or explore the work.</p><div className="hero-actions"><ClayButton href="/">Go Home</ClayButton><ClayButton href="/work" secondary>View Work</ClayButton></div></div>}
