@@ -29,4 +29,4 @@ The supplied full-resolution artwork stays in the owner's Portfolio assets folde
 
 ## GitHub
 
-Create an empty GitHub repository, then add its URL as `origin` and push the `main` branch. No repository remote is configured here yet. `node_modules/`, `.next/`, local environment files, and test output are ignored. Configure environment variables in the hosting provider rather than committing secrets.
+The `main` branch is connected to [UzairUmair/NEXT-Studio-Site](https://github.com/UzairUmair/NEXT-Studio-Site). Future changes can be uploaded with `git push`. `node_modules/`, `.next/`, local environment files, and test output are ignored. Configure environment variables in the hosting provider rather than committing secrets.
