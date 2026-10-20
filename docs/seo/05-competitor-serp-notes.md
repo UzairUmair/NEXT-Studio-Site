@@ -1,0 +1,13 @@
+# Search result observations and buyer intent notes
+
+Observed 20 October 2026 from general English-language web search queries. These are **search result snapshots**, not NEXT Studio ranking checks, keyword-volume estimates, or a location-controlled Google SERP. Results can differ by market, device and personalization. Pages were reviewed for buyer questions and offer framing, not copied.
+
+| Intent searched | Observed example | Buyer need shown | NEXT Studio opportunity |
+|---|---|---|---|
+| Small-business website development/pricing | [Website Developers Pakistan](https://websitedevelopers.pk/pricing/), [PageOne](https://pageone.pk/web-development/) | Scope, contact features, handoff and PKR pricing are made concrete. | Describe exact starting package, what client supplies and where hosting/content fall outside it. Keep no invented location. |
+| Web-app MVP development | [TaskifyLabs](https://www.taskifylabs.com/services/mvp-development/web-app-mvp), [MVPLab](https://mvplab.ai/mvp-development) | Prospects compare discovery, minimum features, integrations and quote basis. | Explain workflow mapping and demonstrate FreelancerFlow honestly as personal work. Avoid a promised two-week build or fabricated capability. |
+| Brand identity for small businesses | [Quink Co.](https://www.quink.co/services/brand-identity-kits), [Origin Labs](https://originlabs.pk/services/brand-identity/) | Buyers want to know which logo, color, type and export files they receive. | State the agreed file and revision approach; show Pure Roots as concept and NEXT Studio identity as in-house. |
+| Technical SEO audit | [PageSpeed Matters](https://www.pagespeedmatters.com/services/technical-seo-audit), [Ignax](https://ignax.dev/articles/technical-seo-audit-deliverables) | A prioritized fix list and verification are clearer than generic “SEO growth.” | Explain audit outputs and separate controllable changes from search outcomes. |
+| GEO/AIO audit | [AI Search Visibility](https://www.aisearchvisibility.ai/features), [Google Search Central](https://developers.google.com/search/docs/appearance/ai-features) | Commercial offers vary; some imply citation likelihood or formulas that Google does not endorse. | Position an evidence-based content/crawl/identity audit. Do not sell a special AI ranking trick. |
+
+Pakistani variants have relevant PKR pricing results, but this does not establish NEXT Studio's own local rankings or a physical office. Global English queries likewise show varied agency and builder results. Search Console query and country data are needed before choosing geographic terms as page targets.
