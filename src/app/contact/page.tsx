@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
 import {ContactForm} from '@/components/contact-form';
 import {DirectQuote} from '@/components/content';
-export const metadata:Metadata={title:'Contact',description:'Tell NEXT Studio about your project and prepare a quotation inquiry on WhatsApp.'};
+import {pageMetadata} from '@/lib/seo';
+export const metadata:Metadata=pageMetadata({title:'Contact NEXT Studio — Request a Project Quote',description:'Tell NEXT Studio what you want to build or design. Prepare a WhatsApp inquiry about your goals, scope and timing; no payment is taken on this site.',path:'/contact'});
 export default function Contact(){return <div className="container"><div className="page-hero"><span className="eyebrow">START A PROJECT</span><h1>Let’s build<br/>what’s next.</h1><p>Share your goals and we’ll start a direct conversation about scope, timing and a quotation.</p></div><div className="contact-grid"><div><h2 style={{fontSize:'2.8rem'}}>A conversation first.</h2><p>Choose a package or describe your idea. The form prepares a WhatsApp message for you to review and send. It does not submit or store information on this website.</p><DirectQuote service="A new project"/><div className="notice" style={{marginTop:30}}>No payment taken on this website. An invoice is provided after scope approval. Bank transfer is handled manually through a private channel.</div></div><ContactForm/></div></div>}

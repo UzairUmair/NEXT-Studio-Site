@@ -32,7 +32,7 @@ export function Header() {
     <header className={`site-header ${home ? 'home-header' : 'inner-header'}`}>
       <div className="header-inner">
         <div className="brand-group">
-          <Link href="/" className="logo-link" aria-label="NEXT Studio home"><Image src="/brand/logo-approved.webp" alt="NEXT Studio" width={1637} height={488} priority /></Link>
+          <Link href="/" className="logo-link" aria-label="NEXT Studio home"><Image src="/brand/logo-web.webp" alt="NEXT Studio" width={800} height={238} priority /></Link>
           <CurrencySwitch />
         </div>
         <nav className="nav-pills" aria-label="Main navigation">
@@ -53,7 +53,7 @@ export function Header() {
   </>;
 }
 
-export function Footer() { return <footer className="footer"><div className="container footer-grid"><div className="footer-brand"><Image src="/brand/logo-approved.webp" alt="NEXT Studio" width={200} height={62}/><p>Digital craft.<br/>A forward point of view.</p></div><div><b>Explore</b><Link href="/work">Selected work</Link><Link href="/services">Services</Link><Link href="/pricing">Pricing</Link><Link href="/about">The studio</Link></div><div><b>Get in touch</b><Link href="/contact">Start a project ↗</Link><a href="https://wa.me/966592860289" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} NEXT Studio</span><span>Independent by design.</span><Link href="/payment-process">How payment works ↗</Link></div></footer>; }
+export function Footer() { return <footer className="footer"><div className="container footer-grid"><div className="footer-brand"><Image src="/brand/logo-web.webp" alt="NEXT Studio" width={200} height={60}/><p>Digital craft.<br/>A forward point of view.</p></div><div><b>Explore</b><Link href="/work">Selected work</Link><Link href="/services">Services</Link><Link href="/pricing">Pricing</Link><Link href="/about">The studio</Link></div><div><b>Get in touch</b><Link href="/contact">Start a project ↗</Link><a href="https://wa.me/966592860289" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} NEXT Studio</span><span>Independent by design.</span><Link href="/payment-process">How payment works ↗</Link></div></footer>; }
 
 export function FloatingActions() {
   const [show,setShow]=useState(false);

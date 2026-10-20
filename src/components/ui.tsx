@@ -8,3 +8,4 @@ export function ClayButton({href,children,secondary=false,external=false,classNa
 }
 export function BackButton({fallback='/work',label='Back to Work'}:{fallback?:string,label?:string}){return <Link className="back-button" href={fallback}><ArrowLeft size={18} aria-hidden="true"/>{label}</Link>}
 export function SectionHeading({eyebrow,title,copy}:{eyebrow:string,title:string,copy?:string}){return <div className="section-heading"><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{copy&&<p>{copy}</p>}</div>}
+export function Breadcrumbs({items}:{items:{label:string;href?:string}[]}){return <nav className="breadcrumbs" aria-label="Breadcrumb">{items.map((item,index)=><span key={`${item.label}-${index}`}>{index>0&&<span aria-hidden="true">/</span>}{item.href?<Link href={item.href}>{item.label}</Link>:<span aria-current="page">{item.label}</span>}</span>)}</nav>}

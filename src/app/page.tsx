@@ -8,8 +8,12 @@ import {DirectQuote,FAQ,PricingCard,ProjectCard,ServiceCard} from '@/components/
 import {CurrencySwitch} from '@/components/currency';
 import {Reveal} from '@/components/reveal';
 import {packages,projects,services} from '@/data/site';
+import type {Metadata} from 'next';
+import {JsonLd,siteOrigin} from '@/lib/seo';
+export const metadata:Metadata={alternates:{canonical:siteOrigin+'/'}};
 const steps=[['Discover','The right questions first. We learn your goals, audience and what the work needs to do.'],['Define','Clear scope, considered direction. Deliverables, timeline and revisions agreed together.'],['Create','Design with intention. Build with care. Refine the details through direct feedback.'],['Launch','A thoughtful handover. Check the experience, share the files and plan the next step.']];
 export default function Home(){return <>
+  <JsonLd data={{'@context':'https://schema.org','@type':'WebSite',name:'NEXT Studio',url:siteOrigin+'/'}}/>
   <HeroSplit/>
   <div className="hero-footnote"><span>DESIGN / DEVELOPMENT / DIGITAL GROWTH</span><a href="#selected-work">SCROLL TO EXPLORE <ArrowDownRight size={16}/></a></div>
   <section className="section container selected-section" id="selected-work"><Reveal><div className="section-top"><SectionHeading eyebrow="01 / SELECTED WORK" title="A point of view. In every pixel."/><div className="section-aside"><p>Personal projects. Original identities.<br/>Ideas made tangible.</p><Link className="section-link" href="/work">Explore all work <ArrowUpRight size={18}/></Link></div></div></Reveal><div className="selected-grid"><Reveal><ProjectCard project={projects[0]} large/></Reveal><Reveal className="offset-project"><ProjectCard project={projects[2]}/></Reveal></div><Reveal><article className="project-ribbon"><Link className="ribbon-image" href="/work/freelancerflow"><Image src={projects[1].cover} alt="FreelancerFlow productivity interface mockup" fill sizes="(max-width:768px) 100vw, 50vw"/></Link><div><span className="eyebrow">WEB APPLICATION / PERSONAL PROJECT</span><h3>Less admin.<br/>More headspace.</h3><p>FreelancerFlow explores a calmer workspace for independent work.</p><Link className="section-link" href="/work/freelancerflow">Meet FreelancerFlow <ArrowUpRight size={18}/></Link></div></article></Reveal></section>

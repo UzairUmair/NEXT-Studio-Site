@@ -23,7 +23,7 @@ These browser checks use installed Google Chrome and write local results to igno
 
 Prices and project records live in `src/data/site.ts`. The inquiry form prepares a WhatsApp draft; it does not store or send submissions itself. Payments are arranged privately after quotation.
 
-Set `NEXT_PUBLIC_SITE_URL` to a verified HTTPS production origin before rebuilding for launch. The default is intentionally noindex. Review legal/business details before publishing.
+The canonical production origin is `https://nextstudio.us.ci` in `src/lib/seo.tsx`. Set `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` only to a token supplied by Google Search Console; the repository does not assume account verification. Review legal/business details before publishing.
 
 The supplied full-resolution artwork stays in the owner's Portfolio assets folder and Downloads. This repository includes only the optimized assets used by the site. The Pure Roots and New Year graphics are labeled as concept or educational work; small text within those flattened source images has not been fully repaired.
 
