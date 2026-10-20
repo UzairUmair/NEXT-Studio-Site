@@ -1,6 +1,6 @@
 # NEXT Studio SEO, GEO and AIO implementation report
 
-Implemented and locally validated on 20 October 2026. **The production site has not been redeployed as part of this work.** Its observed responses still show the previous `noindex, nofollow` state. No claim of indexing, ranking, account verification, AI citations or traffic improvement is made.
+Implemented and locally validated on 20 October 2026. The initial production check below captured the old deployment shortly after the GitHub push. Vercel later deployed commit `0038264` to production and the live checks passed. See [the deployment verification report](PRODUCTION_DEPLOYMENT_VERIFICATION.md) for current evidence. No claim of indexing, ranking, account verification, AI citations or traffic improvement is made.
 
 ## What changed
 
@@ -17,14 +17,14 @@ Implemented and locally validated on 20 October 2026. **The production site has 
 
 | Check | Observed live before | Final local production build | Production after deployment |
 |---|---|---|---|
-| HTML public routes | 19/19 returned 200 | 19/19 returned 200 | Pending deploy |
-| Robots meta | 19/19 `noindex, nofollow` | 19/19 `index, follow` | Pending deploy |
-| Self canonical | 0/19 | 19/19 | Pending deploy |
-| `robots.txt` | 404 | 200, `text/plain`, sitemap link | Pending deploy |
-| `sitemap.xml` | 404 | 200, `application/xml`, 19 canonical routes | Pending deploy |
-| JSON-LD | 0 pages | Organization on all; WebSite home; Service and BreadcrumbList on services; CreativeWork and BreadcrumbList on cases | Pending deploy |
-| Internal link/image crawl | Existing navigation observed | 19 routes crawled, zero broken links/images, zero browser page errors | Pending deploy |
-| 404 behavior | Not fully audited | Unknown service and page return 404 | Pending deploy |
+| HTML public routes | 19/19 returned 200 | 19/19 returned 200 | 19/19 returned 200 |
+| Robots meta | 19/19 `noindex, nofollow` | 19/19 `index, follow` | 19/19 `index, follow` |
+| Self canonical | 0/19 | 19/19 | 19/19 |
+| `robots.txt` | 404 | 200, `text/plain`, sitemap link | 200, `text/plain`, sitemap link |
+| `sitemap.xml` | 404 | 200, `application/xml`, 19 canonical routes | 200, `application/xml`, 19 canonical routes |
+| JSON-LD | 0 pages | Organization on all; WebSite home; Service and BreadcrumbList on services; CreativeWork and BreadcrumbList on cases | Parseable on 19/19 pages |
+| Internal link/image crawl | Existing navigation observed | 19 routes crawled, zero broken links/images, zero browser page errors | Browser functionality checked on key live routes; full internal link crawl was local |
+| 404 behavior | Not fully audited | Unknown service and page return 404 | Unknown service returns 404 |
 
 The raw before/after route summaries are in ignored local `artifacts/live-before-audit.json` and `artifacts/local-audit.json`. The 19-route metadata/JSON-LD result is in `artifacts/seo-verification.json`. Mobile screenshots cover home, a service, a case, pricing and contact; `artifacts/seo-home-desktop.png` captures the desktop home page. These local artifacts are evidence for this workspace, not published site assets.
 
@@ -39,7 +39,7 @@ The raw before/after route summaries are in ignored local `artifacts/live-before
 - Local and live Chrome PerformanceObserver samples for home, one service and CineVerse are in `artifacts/vitals-local.json` and `artifacts/vitals-live.json`. In an unthrottled run, local home LCP was 2,172 ms mobile / 324 ms desktop and CLS 0.001 / 0.002. The old live home sample was 2,032 ms mobile / 1,072 ms desktop, CLS 0.002 / 0.002. Different hosts, caching and run conditions make these **non-comparable** as an improvement claim. INP needs user interaction/field data. PageSpeed Insights API returned HTTP 429, so no Lighthouse score or Chrome UX Report verdict is claimed.
 - JSON-LD was parsed in the local browser on all routes and inspected for expected types. External Google Rich Results Test and Schema Markup Validator must be run on deployed URLs.
 
-## Production endpoints to check after deployment
+## Production endpoints verified after deployment
 
 - `https://nextstudio.us.ci/`
 - `https://nextstudio.us.ci/robots.txt`
@@ -53,16 +53,16 @@ The raw before/after route summaries are in ignored local `artifacts/live-before
 - `https://nextstudio.us.ci/work/freelancerflow`
 - `https://nextstudio.us.ci/work/pure-roots`
 
-Run `node scripts/audit-live.mjs https://nextstudio.us.ci`, then compare every row with `docs/SEO_PAGE_METADATA_MATRIX.md`. Run `TEST_ORIGIN=https://nextstudio.us.ci node scripts/verify-seo.mjs` in a shell that supports that environment syntax after deployment; on PowerShell set `$env:TEST_ORIGIN` first. The script checks canonical route paths against the sitemap. For external rich-result and page-speed tests, use the official tools linked in `docs/SEARCH_ENGINE_MANUAL_SETUP.md`.
+`node scripts/audit-live.mjs https://nextstudio.us.ci` and the live `verify-seo.mjs` browser crawl passed on 20 October 2026. The latter checks canonical route paths against the sitemap; a separate comparison confirmed the full canonical origins. For external rich-result and page-speed tests, use the official tools linked in `docs/SEARCH_ENGINE_MANUAL_SETUP.md`.
 
 ## Known limits and owner action
 
-- Deploy this code and recheck live HTTP responses before submitting the sitemap. Local success does not change the already deployed site.
+- The production deployment and live HTTP responses were verified on 20 October 2026. Search engine crawling, indexing and ranking still require external confirmation.
 - GSC connector access shows a property string but returned zero rows for 28-day Search Analytics and sitemaps. This does not establish index status or the method of verification. Bing, GA4, DNS and CDN control were not available.
 - The public wildcard robots policy leaves the GPTBot training-crawler choice at the default. Confirm owner preference before adding an explicit bot-specific rule.
 - The portfolio descriptions use only source data and supplied images. Review the flattened Pure Roots and New Year artwork for any embedded claim or attribution requiring owner correction. No new screenshots, unverifiable metrics, client claims or social profiles were created.
 - No GA4 tracking code was added because no Measurement ID or privacy/consent decision was provided. No analytics events or unconfigured scripts burden page loading.
-- Check HTTP/HTTPS and alternate host redirects in the deployment account; this repository did not change domains, DNS or CDN settings.
-- Review real-user Core Web Vitals and GSC indexing after deployment. Suggested first content/technical review: 20 November 2026, contingent on data becoming available.
+- The production custom domain and Vercel alias both have valid configuration. The alias serves content with canonicals pointing to the custom domain; a separate redirect was not configured.
+- Review real-user Core Web Vitals and GSC indexing after search engines collect data. Suggested first content/technical review: 20 November 2026, contingent on data becoming available.
 
 Google states that its AI search features use standard SEO foundations and have no extra AI-only markup requirement; eligible pages are not guaranteed to be crawled or shown. See [Google's AI features guidance](https://developers.google.com/search/docs/appearance/ai-features). OpenAI distinguishes [OAI-SearchBot from GPTBot and ChatGPT-User](https://developers.openai.com/api/docs/bots).
