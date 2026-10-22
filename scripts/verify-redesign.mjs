@@ -9,7 +9,7 @@ const context=await browser.newContext({viewport:{width:1440,height:900},reduced
 const page=await context.newPage();
 const errors=[];page.on('pageerror',e=>errors.push(e.message));
 const results=[];
-for(const route of ['/','/services','/services/web-development','/work','/work/cineverse','/work/freelancerflow','/work/pure-roots','/work/next-studio-identity','/pricing','/about','/contact','/privacy','/terms','/payment-process']){
+for(const route of ['/','/services','/services/web-development','/work','/work/cineverse','/work/freelancerflow','/work/pure-roots','/work/next-studio-identity','/work/new-year-study','/work/car-wash-study','/work/double-exposure-study','/work/smart-move-study','/pricing','/about','/contact','/privacy','/terms','/payment-process']){
  const response=await page.goto(origin+route,{waitUntil:'networkidle'});assert.equal(response.status(),200,route);
  assert.equal(await page.locator('h1').count(),1,route);
  const axe=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa']).analyze();

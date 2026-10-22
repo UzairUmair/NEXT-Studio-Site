@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import './premium.css';
+import './atmosphere.css';
 import {CurrencyProvider} from '@/components/currency';
 import {Header,Footer,FloatingActions} from '@/components/layout';
 import {absoluteUrl,JsonLd,organizationId,siteName,siteOrigin} from '@/lib/seo';
